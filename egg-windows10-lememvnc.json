@@ -1,0 +1,52 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2025-11-24T12:26:15+01:00",
+    "name": "windows 10 lememvnc",
+    "author": "hi@mrbeenopro.site",
+    "description": "egg running windows 10 with qemu",
+    "features": null,
+    "docker_images": {
+        "ghcr.io\/pterodactyl\/yolks:debian": "ghcr.io\/pterodactyl\/yolks:debian"
+    },
+    "file_denylist": [],
+    "startup": ".\/start10.sh",
+    "config": {
+        "files": "{}",
+        "startup": "{}",
+        "logs": "{}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "apt update -y && apt install -y wget curl bash jq && mkdir -p \/mnt\/server && cd \/mnt\/server && echo 'Downloading setup script...' && wget -O start10.sh https:\/\/mrbeeenopro.github.io\/lemem-10\/start10.sh && chmod 777 start10.sh && echo 'Installation complete. Waiting...' && sleep 3",
+            "container": "ghcr.io\/ptero-eggs\/installers:debian",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "vm memory",
+            "description": "set memory for vm if you dont know to set you can see in here",
+            "env_variable": "VM_MEMORY",
+            "default_value": "2048",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "port 8000",
+            "description": "port for rdp in windows",
+            "env_variable": "OTHER_PORT",
+            "default_value": "8000",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "string|max:20",
+            "field_type": "text"
+        }
+    ]
+}
