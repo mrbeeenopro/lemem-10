@@ -1,25 +1,24 @@
-# Windows 11 VM Egg for Pterodactyl
+# Windows 10 VM Egg for Pterodactyl
 
-![Preview](https://pub-cc2caec4959546c9b98850c80420b764.r2.dev/panel.png)
 
-Introduces a Windows 11 virtualization Egg designed for use on the Pterodactyl panel. It allows you to run a lightweight Windows 11 virtual machine inside a container using QEMU/KVM. The Egg supports user‑configured RAM through the `VM_MEMORY` variable.
+Introduces a Windows 10 virtualization Egg designed for use on the Pterodactyl panel. It allows you to run a lightweight Windows 10 virtual machine inside a container using QEMU/KVM. The Egg supports user‑configured RAM through the `VM_MEMORY` variable.
 
 ---
 
 ## 🖥️ Overview
 
-This Egg provides a fully automated setup for launching a Windows 11 environment inside Pterodactyl. It is optimized for:
+This Egg provides a fully automated setup for launching a Windows 10 environment inside Pterodactyl. It is optimized for:
 
-![Preview](https://cdn.bosd.io.vn/windows11.png)
+![Preview](https://cdn.bosd.io.vn/win10.png)
 
 * Virtualized desktop usage
 * Background Windows tasks
 * Automation or tooling that requires Windows compatibility
 * Labs, demos, or testing
-* ✅ support kvm
+* ❌ support kvm
 * ✅ live web vnc srceen
 * ✅ multi core support
-* ✅ support rdp
+* ❌ support rdp
 * ❌ shared folder with host
 
 ---
@@ -28,15 +27,15 @@ This Egg provides a fully automated setup for launching a Windows 11 environment
 
  **Minimum specs**
  
- * 3.5gb of memory
- * 200% cpu
- * 20gb disk
+ * 2gb of memory
+ * 100% cpu
+ * 3.4gb disk
 
  **Recommended specs**
 
  * 10gb of memory
  * 600% cpu
- * 50gb disk
+ * 10gb disk
 
 ---
 
@@ -50,7 +49,7 @@ Example:
 VM_MEMORY=4096
 ```
 
-This allocates 4 GB of RAM to the Windows 11 VM.
+This allocates 4 GB of RAM to the Windows 10 VM.
 
 > ⚠️ Note: The host system will always consume additional RAM above what is assigned to the VM. See table below.
 
@@ -95,4 +94,4 @@ If you need assistance, feel free to ask for troubleshooting, contact via [disco
 
 ---
 
-Enjoy using Windows 11 on your Pterodactyl panel!
+Enjoy using Windows 10 on your Pterodactyl panel!
