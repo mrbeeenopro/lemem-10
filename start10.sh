@@ -82,7 +82,7 @@ bootstrap_system() {
   pip install websockify --break-system-packages && \
   wget -O  windows10.qcow2 https://cdn.bosd.io.vn/tiny10-x64.qcow2 && \
   wget https://cdn.bosd.io.vn/OVMF.fd && \
-  mkdir shared && \
+  chmod -R 755 /home/container/shared && \
   echo 'change vnc password' > /home/container/qemu_cmd.txt && \
   echo '$user_passwd' > /home/container/vnc_raw_passwd.txt && \
   cat /home/container/vnc_raw_passwd.txt >> /home/container/qemu_cmd.txt" || die
@@ -107,7 +107,7 @@ run_system() {
   # Starting NoVNC
   d.stat "Starting noVNC server..."
   $install_path/alpine --kill-on-exit -r $install_path -b /dev -b /proc -b /sys -b /tmp -w "/home/container/noVNC1" /bin/sh -c "./utils/novnc_proxy --vnc localhost:5901 --listen 0.0.0.0:$SERVER_PORT" &>/dev/null &
-  
+  chmod -R 755 $install_path/home/container/shared
   d.stat "Your server is now available at \033[1;32mhttp://$(curl --silent -L checkip.pterodactyl-installer.se):$SERVER_PORT"
   d.stat "your vnc password: $user_passwd nerver share it to anyone"
   # start qemu vm
