@@ -82,6 +82,7 @@ bootstrap_system() {
   pip install websockify --break-system-packages && \
   wget -O  windows10.qcow2 https://cdn.bosd.io.vn/tiny10-x64.qcow2 && \
   wget https://cdn.bosd.io.vn/OVMF.fd && \
+  mkdir shared && \
   echo 'change vnc password' > /home/container/qemu_cmd.txt && \
   echo '$user_passwd' > /home/container/vnc_raw_passwd.txt && \
   cat /home/container/vnc_raw_passwd.txt >> /home/container/qemu_cmd.txt" || die
